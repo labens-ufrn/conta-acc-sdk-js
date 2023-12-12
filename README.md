@@ -1,1 +1,0 @@
-# conta-acc-sdk-js
