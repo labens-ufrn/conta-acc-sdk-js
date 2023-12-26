@@ -1,3 +1,8 @@
+export interface UserCourseArgs {
+    params: {
+        id: string;
+    };
+}
 export interface CreateUserArgs {
     body: {
         courseId: string;
@@ -44,11 +49,17 @@ export interface SignUpArgs {
         enrollId: string;
         email: string;
         password: string;
+        courseId: string;
     };
 }
 export interface MeArgs {
     query: {
         include?: string;
+    };
+}
+export interface DeleteCourseArgs {
+    params: {
+        id: string;
     };
 }
 export interface ListCoursesArgs {
@@ -126,6 +137,11 @@ export interface UpdateResolutionArgs {
         id: string;
     };
 }
+export interface DeleteResolutionArgs {
+    params: {
+        id: string;
+    };
+}
 export interface ListCategoriesArgs {
     query: {
         include?: string;
@@ -162,6 +178,11 @@ export interface UpdateCategoryArgs {
         id: string;
     };
 }
+export interface DeleteCategoryArgs {
+    params: {
+        id: string;
+    };
+}
 export interface ListActivitiesArgs {
     query: {
         include?: string;
@@ -186,6 +207,9 @@ export interface CreateActivityArgs {
         description?: ({
             [k: string]: unknown;
         } | string) | null;
+        workloadInput?: ({
+            [k: string]: unknown;
+        } | boolean) | null;
         categoryId: string;
     };
 }
@@ -203,12 +227,20 @@ export interface UpdateActivityArgs {
         workloadActivity?: ({
             [k: string]: unknown;
         } | number) | null;
+        workloadInput?: ({
+            [k: string]: unknown;
+        } | boolean) | null;
         description?: ({
             [k: string]: unknown;
         } | string) | null;
     };
     params: {
         activityId: string;
+    };
+}
+export interface DeleteActivityArgs {
+    params: {
+        id: string;
     };
 }
 export interface CreateDepartmentArgs {
@@ -230,6 +262,16 @@ export interface UpdateDepartmentArgs {
         name?: string;
         sede?: string;
     };
+    params: {
+        id: string;
+    };
+}
+export interface DeleteDepartamentArgs {
+    params: {
+        id: string;
+    };
+}
+export interface DeleteActivityStudentArgs {
     params: {
         id: string;
     };
@@ -264,6 +306,9 @@ export interface NewActivityArgs {
         link?: ({
             [k: string]: unknown;
         } | string) | null;
+        value?: ({
+            [k: string]: unknown;
+        } | number) | null;
     };
 }
 export interface ListReviewActivitiesArgs {

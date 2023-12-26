@@ -39,9 +39,43 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getFunctions = void 0;
 var getFunctions = function (axiosInstance) {
     var user = {
+        userCourse: function (args) {
+            return __awaiter(this, void 0, void 0, function () {
+                var path, params, paramKey, value, response, error_1;
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0:
+                            path = "/user/:id";
+                            params = args.params;
+                            for (paramKey in params) {
+                                if (params.hasOwnProperty(paramKey)) {
+                                    value = params[paramKey];
+                                    path = path.replace(":".concat(paramKey), value.toString());
+                                }
+                            }
+                            _a.label = 1;
+                        case 1:
+                            _a.trys.push([1, 3, , 4]);
+                            return [4 /*yield*/, axiosInstance({
+                                    method: 'delete',
+                                    data: null,
+                                    params: null,
+                                    url: path,
+                                })];
+                        case 2:
+                            response = _a.sent();
+                            return [2 /*return*/, response];
+                        case 3:
+                            error_1 = _a.sent();
+                            throw error_1;
+                        case 4: return [2 /*return*/];
+                    }
+                });
+            });
+        },
         createUser: function (args) {
             return __awaiter(this, void 0, void 0, function () {
-                var path, response, error_1;
+                var path, response, error_2;
                 return __generator(this, function (_a) {
                     switch (_a.label) {
                         case 0:
@@ -59,8 +93,8 @@ var getFunctions = function (axiosInstance) {
                             response = _a.sent();
                             return [2 /*return*/, response];
                         case 3:
-                            error_1 = _a.sent();
-                            throw error_1;
+                            error_2 = _a.sent();
+                            throw error_2;
                         case 4: return [2 /*return*/];
                     }
                 });
@@ -68,7 +102,7 @@ var getFunctions = function (axiosInstance) {
         },
         listUsers: function (args) {
             return __awaiter(this, void 0, void 0, function () {
-                var path, response, error_2;
+                var path, response, error_3;
                 return __generator(this, function (_a) {
                     switch (_a.label) {
                         case 0:
@@ -86,8 +120,8 @@ var getFunctions = function (axiosInstance) {
                             response = _a.sent();
                             return [2 /*return*/, response];
                         case 3:
-                            error_2 = _a.sent();
-                            throw error_2;
+                            error_3 = _a.sent();
+                            throw error_3;
                         case 4: return [2 /*return*/];
                     }
                 });
@@ -95,7 +129,7 @@ var getFunctions = function (axiosInstance) {
         },
         updateUser: function (args) {
             return __awaiter(this, void 0, void 0, function () {
-                var path, params, paramKey, value, response, error_3;
+                var path, params, paramKey, value, response, error_4;
                 return __generator(this, function (_a) {
                     switch (_a.label) {
                         case 0:
@@ -120,8 +154,8 @@ var getFunctions = function (axiosInstance) {
                             response = _a.sent();
                             return [2 /*return*/, response];
                         case 3:
-                            error_3 = _a.sent();
-                            throw error_3;
+                            error_4 = _a.sent();
+                            throw error_4;
                         case 4: return [2 /*return*/];
                     }
                 });
@@ -131,7 +165,7 @@ var getFunctions = function (axiosInstance) {
     var manager = {
         signIn: function (args) {
             return __awaiter(this, void 0, void 0, function () {
-                var path, response, error_4;
+                var path, response, error_5;
                 return __generator(this, function (_a) {
                     switch (_a.label) {
                         case 0:
@@ -149,8 +183,8 @@ var getFunctions = function (axiosInstance) {
                             response = _a.sent();
                             return [2 /*return*/, response];
                         case 3:
-                            error_4 = _a.sent();
-                            throw error_4;
+                            error_5 = _a.sent();
+                            throw error_5;
                         case 4: return [2 /*return*/];
                     }
                 });
@@ -158,7 +192,7 @@ var getFunctions = function (axiosInstance) {
         },
         signUp: function (args) {
             return __awaiter(this, void 0, void 0, function () {
-                var path, response, error_5;
+                var path, response, error_6;
                 return __generator(this, function (_a) {
                     switch (_a.label) {
                         case 0:
@@ -176,33 +210,6 @@ var getFunctions = function (axiosInstance) {
                             response = _a.sent();
                             return [2 /*return*/, response];
                         case 3:
-                            error_5 = _a.sent();
-                            throw error_5;
-                        case 4: return [2 /*return*/];
-                    }
-                });
-            });
-        },
-        me: function (args) {
-            return __awaiter(this, void 0, void 0, function () {
-                var path, response, error_6;
-                return __generator(this, function (_a) {
-                    switch (_a.label) {
-                        case 0:
-                            path = "/manager/me";
-                            _a.label = 1;
-                        case 1:
-                            _a.trys.push([1, 3, , 4]);
-                            return [4 /*yield*/, axiosInstance({
-                                    method: 'get',
-                                    data: null,
-                                    params: args.query,
-                                    url: path,
-                                })];
-                        case 2:
-                            response = _a.sent();
-                            return [2 /*return*/, response];
-                        case 3:
                             error_6 = _a.sent();
                             throw error_6;
                         case 4: return [2 /*return*/];
@@ -210,15 +217,13 @@ var getFunctions = function (axiosInstance) {
                 });
             });
         },
-    };
-    var course = {
-        listCourses: function (args) {
+        me: function (args) {
             return __awaiter(this, void 0, void 0, function () {
                 var path, response, error_7;
                 return __generator(this, function (_a) {
                     switch (_a.label) {
                         case 0:
-                            path = "/course/";
+                            path = "/manager/me";
                             _a.label = 1;
                         case 1:
                             _a.trys.push([1, 3, , 4]);
@@ -239,9 +244,72 @@ var getFunctions = function (axiosInstance) {
                 });
             });
         },
+    };
+    var course = {
+        deleteCourse: function (args) {
+            return __awaiter(this, void 0, void 0, function () {
+                var path, params, paramKey, value, response, error_8;
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0:
+                            path = "/course/:id";
+                            params = args.params;
+                            for (paramKey in params) {
+                                if (params.hasOwnProperty(paramKey)) {
+                                    value = params[paramKey];
+                                    path = path.replace(":".concat(paramKey), value.toString());
+                                }
+                            }
+                            _a.label = 1;
+                        case 1:
+                            _a.trys.push([1, 3, , 4]);
+                            return [4 /*yield*/, axiosInstance({
+                                    method: 'delete',
+                                    data: null,
+                                    params: null,
+                                    url: path,
+                                })];
+                        case 2:
+                            response = _a.sent();
+                            return [2 /*return*/, response];
+                        case 3:
+                            error_8 = _a.sent();
+                            throw error_8;
+                        case 4: return [2 /*return*/];
+                    }
+                });
+            });
+        },
+        listCourses: function (args) {
+            return __awaiter(this, void 0, void 0, function () {
+                var path, response, error_9;
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0:
+                            path = "/course/";
+                            _a.label = 1;
+                        case 1:
+                            _a.trys.push([1, 3, , 4]);
+                            return [4 /*yield*/, axiosInstance({
+                                    method: 'get',
+                                    data: null,
+                                    params: args.query,
+                                    url: path,
+                                })];
+                        case 2:
+                            response = _a.sent();
+                            return [2 /*return*/, response];
+                        case 3:
+                            error_9 = _a.sent();
+                            throw error_9;
+                        case 4: return [2 /*return*/];
+                    }
+                });
+            });
+        },
         createCourse: function (args) {
             return __awaiter(this, void 0, void 0, function () {
-                var path, response, error_8;
+                var path, response, error_10;
                 return __generator(this, function (_a) {
                     switch (_a.label) {
                         case 0:
@@ -259,8 +327,8 @@ var getFunctions = function (axiosInstance) {
                             response = _a.sent();
                             return [2 /*return*/, response];
                         case 3:
-                            error_8 = _a.sent();
-                            throw error_8;
+                            error_10 = _a.sent();
+                            throw error_10;
                         case 4: return [2 /*return*/];
                     }
                 });
@@ -268,7 +336,7 @@ var getFunctions = function (axiosInstance) {
         },
         updateCourse: function (args) {
             return __awaiter(this, void 0, void 0, function () {
-                var path, params, paramKey, value, response, error_9;
+                var path, params, paramKey, value, response, error_11;
                 return __generator(this, function (_a) {
                     switch (_a.label) {
                         case 0:
@@ -293,8 +361,8 @@ var getFunctions = function (axiosInstance) {
                             response = _a.sent();
                             return [2 /*return*/, response];
                         case 3:
-                            error_9 = _a.sent();
-                            throw error_9;
+                            error_11 = _a.sent();
+                            throw error_11;
                         case 4: return [2 /*return*/];
                     }
                 });
@@ -304,7 +372,7 @@ var getFunctions = function (axiosInstance) {
     var resolution = {
         listResolution: function (args) {
             return __awaiter(this, void 0, void 0, function () {
-                var path, response, error_10;
+                var path, response, error_12;
                 return __generator(this, function (_a) {
                     switch (_a.label) {
                         case 0:
@@ -322,8 +390,8 @@ var getFunctions = function (axiosInstance) {
                             response = _a.sent();
                             return [2 /*return*/, response];
                         case 3:
-                            error_10 = _a.sent();
-                            throw error_10;
+                            error_12 = _a.sent();
+                            throw error_12;
                         case 4: return [2 /*return*/];
                     }
                 });
@@ -331,7 +399,7 @@ var getFunctions = function (axiosInstance) {
         },
         createResolution: function (args) {
             return __awaiter(this, void 0, void 0, function () {
-                var path, response, error_11;
+                var path, response, error_13;
                 return __generator(this, function (_a) {
                     switch (_a.label) {
                         case 0:
@@ -349,8 +417,8 @@ var getFunctions = function (axiosInstance) {
                             response = _a.sent();
                             return [2 /*return*/, response];
                         case 3:
-                            error_11 = _a.sent();
-                            throw error_11;
+                            error_13 = _a.sent();
+                            throw error_13;
                         case 4: return [2 /*return*/];
                     }
                 });
@@ -358,7 +426,7 @@ var getFunctions = function (axiosInstance) {
         },
         updateResolution: function (args) {
             return __awaiter(this, void 0, void 0, function () {
-                var path, params, paramKey, value, response, error_12;
+                var path, params, paramKey, value, response, error_14;
                 return __generator(this, function (_a) {
                     switch (_a.label) {
                         case 0:
@@ -383,62 +451,6 @@ var getFunctions = function (axiosInstance) {
                             response = _a.sent();
                             return [2 /*return*/, response];
                         case 3:
-                            error_12 = _a.sent();
-                            throw error_12;
-                        case 4: return [2 /*return*/];
-                    }
-                });
-            });
-        },
-    };
-    var categories = {
-        listCategories: function (args) {
-            return __awaiter(this, void 0, void 0, function () {
-                var path, response, error_13;
-                return __generator(this, function (_a) {
-                    switch (_a.label) {
-                        case 0:
-                            path = "/categories/";
-                            _a.label = 1;
-                        case 1:
-                            _a.trys.push([1, 3, , 4]);
-                            return [4 /*yield*/, axiosInstance({
-                                    method: 'get',
-                                    data: null,
-                                    params: args.query,
-                                    url: path,
-                                })];
-                        case 2:
-                            response = _a.sent();
-                            return [2 /*return*/, response];
-                        case 3:
-                            error_13 = _a.sent();
-                            throw error_13;
-                        case 4: return [2 /*return*/];
-                    }
-                });
-            });
-        },
-        createCategory: function (args) {
-            return __awaiter(this, void 0, void 0, function () {
-                var path, response, error_14;
-                return __generator(this, function (_a) {
-                    switch (_a.label) {
-                        case 0:
-                            path = "/categories/";
-                            _a.label = 1;
-                        case 1:
-                            _a.trys.push([1, 3, , 4]);
-                            return [4 /*yield*/, axiosInstance({
-                                    method: 'post',
-                                    data: args.body,
-                                    params: null,
-                                    url: path,
-                                })];
-                        case 2:
-                            response = _a.sent();
-                            return [2 /*return*/, response];
-                        case 3:
                             error_14 = _a.sent();
                             throw error_14;
                         case 4: return [2 /*return*/];
@@ -446,13 +458,13 @@ var getFunctions = function (axiosInstance) {
                 });
             });
         },
-        updateCategory: function (args) {
+        deleteResolution: function (args) {
             return __awaiter(this, void 0, void 0, function () {
                 var path, params, paramKey, value, response, error_15;
                 return __generator(this, function (_a) {
                     switch (_a.label) {
                         case 0:
-                            path = "/categories/:id";
+                            path = "/resolution/:id";
                             params = args.params;
                             for (paramKey in params) {
                                 if (params.hasOwnProperty(paramKey)) {
@@ -464,8 +476,8 @@ var getFunctions = function (axiosInstance) {
                         case 1:
                             _a.trys.push([1, 3, , 4]);
                             return [4 /*yield*/, axiosInstance({
-                                    method: 'put',
-                                    data: args.body,
+                                    method: 'delete',
+                                    data: null,
                                     params: null,
                                     url: path,
                                 })];
@@ -481,21 +493,14 @@ var getFunctions = function (axiosInstance) {
             });
         },
     };
-    var activities = {
-        listActivities: function (args) {
+    var categories = {
+        listCategories: function (args) {
             return __awaiter(this, void 0, void 0, function () {
-                var path, params, paramKey, value, response, error_16;
+                var path, response, error_16;
                 return __generator(this, function (_a) {
                     switch (_a.label) {
                         case 0:
-                            path = "/activities/:categoryId";
-                            params = args.params;
-                            for (paramKey in params) {
-                                if (params.hasOwnProperty(paramKey)) {
-                                    value = params[paramKey];
-                                    path = path.replace(":".concat(paramKey), value.toString());
-                                }
-                            }
+                            path = "/categories/";
                             _a.label = 1;
                         case 1:
                             _a.trys.push([1, 3, , 4]);
@@ -516,13 +521,13 @@ var getFunctions = function (axiosInstance) {
                 });
             });
         },
-        createActivity: function (args) {
+        createCategory: function (args) {
             return __awaiter(this, void 0, void 0, function () {
                 var path, response, error_17;
                 return __generator(this, function (_a) {
                     switch (_a.label) {
                         case 0:
-                            path = "/activities/";
+                            path = "/categories/";
                             _a.label = 1;
                         case 1:
                             _a.trys.push([1, 3, , 4]);
@@ -543,13 +548,13 @@ var getFunctions = function (axiosInstance) {
                 });
             });
         },
-        updateActivity: function (args) {
+        updateCategory: function (args) {
             return __awaiter(this, void 0, void 0, function () {
                 var path, params, paramKey, value, response, error_18;
                 return __generator(this, function (_a) {
                     switch (_a.label) {
                         case 0:
-                            path = "/activities/:activityId";
+                            path = "/categories/:id";
                             params = args.params;
                             for (paramKey in params) {
                                 if (params.hasOwnProperty(paramKey)) {
@@ -577,21 +582,26 @@ var getFunctions = function (axiosInstance) {
                 });
             });
         },
-    };
-    var department = {
-        createDepartment: function (args) {
+        deleteCategory: function (args) {
             return __awaiter(this, void 0, void 0, function () {
-                var path, response, error_19;
+                var path, params, paramKey, value, response, error_19;
                 return __generator(this, function (_a) {
                     switch (_a.label) {
                         case 0:
-                            path = "/department/";
+                            path = "/categories/:id";
+                            params = args.params;
+                            for (paramKey in params) {
+                                if (params.hasOwnProperty(paramKey)) {
+                                    value = params[paramKey];
+                                    path = path.replace(":".concat(paramKey), value.toString());
+                                }
+                            }
                             _a.label = 1;
                         case 1:
                             _a.trys.push([1, 3, , 4]);
                             return [4 /*yield*/, axiosInstance({
-                                    method: 'post',
-                                    data: args.body,
+                                    method: 'delete',
+                                    data: null,
                                     params: null,
                                     url: path,
                                 })];
@@ -606,13 +616,22 @@ var getFunctions = function (axiosInstance) {
                 });
             });
         },
-        listDepartaments: function (args) {
+    };
+    var activities = {
+        listActivities: function (args) {
             return __awaiter(this, void 0, void 0, function () {
-                var path, response, error_20;
+                var path, params, paramKey, value, response, error_20;
                 return __generator(this, function (_a) {
                     switch (_a.label) {
                         case 0:
-                            path = "/department/";
+                            path = "/activities/:categoryId";
+                            params = args.params;
+                            for (paramKey in params) {
+                                if (params.hasOwnProperty(paramKey)) {
+                                    value = params[paramKey];
+                                    path = path.replace(":".concat(paramKey), value.toString());
+                                }
+                            }
                             _a.label = 1;
                         case 1:
                             _a.trys.push([1, 3, , 4]);
@@ -633,25 +652,18 @@ var getFunctions = function (axiosInstance) {
                 });
             });
         },
-        updateDepartment: function (args) {
+        createActivity: function (args) {
             return __awaiter(this, void 0, void 0, function () {
-                var path, params, paramKey, value, response, error_21;
+                var path, response, error_21;
                 return __generator(this, function (_a) {
                     switch (_a.label) {
                         case 0:
-                            path = "/department/:id";
-                            params = args.params;
-                            for (paramKey in params) {
-                                if (params.hasOwnProperty(paramKey)) {
-                                    value = params[paramKey];
-                                    path = path.replace(":".concat(paramKey), value.toString());
-                                }
-                            }
+                            path = "/activities/";
                             _a.label = 1;
                         case 1:
                             _a.trys.push([1, 3, , 4]);
                             return [4 /*yield*/, axiosInstance({
-                                    method: 'put',
+                                    method: 'post',
                                     data: args.body,
                                     params: null,
                                     url: path,
@@ -667,15 +679,13 @@ var getFunctions = function (axiosInstance) {
                 });
             });
         },
-    };
-    var student = {
-        updateReview: function (args) {
+        updateActivity: function (args) {
             return __awaiter(this, void 0, void 0, function () {
                 var path, params, paramKey, value, response, error_22;
                 return __generator(this, function (_a) {
                     switch (_a.label) {
                         case 0:
-                            path = "/student/activities/:reviewActivityId";
+                            path = "/activities/:activityId";
                             params = args.params;
                             for (paramKey in params) {
                                 if (params.hasOwnProperty(paramKey)) {
@@ -703,20 +713,27 @@ var getFunctions = function (axiosInstance) {
                 });
             });
         },
-        infoActivities: function (args) {
+        deleteActivity: function (args) {
             return __awaiter(this, void 0, void 0, function () {
-                var path, response, error_23;
+                var path, params, paramKey, value, response, error_23;
                 return __generator(this, function (_a) {
                     switch (_a.label) {
                         case 0:
-                            path = "/student/info";
+                            path = "/activities/:id";
+                            params = args.params;
+                            for (paramKey in params) {
+                                if (params.hasOwnProperty(paramKey)) {
+                                    value = params[paramKey];
+                                    path = path.replace(":".concat(paramKey), value.toString());
+                                }
+                            }
                             _a.label = 1;
                         case 1:
                             _a.trys.push([1, 3, , 4]);
                             return [4 /*yield*/, axiosInstance({
-                                    method: 'get',
+                                    method: 'delete',
                                     data: null,
-                                    params: args.query,
+                                    params: null,
                                     url: path,
                                 })];
                         case 2:
@@ -730,13 +747,15 @@ var getFunctions = function (axiosInstance) {
                 });
             });
         },
-        newActivity: function (args) {
+    };
+    var department = {
+        createDepartment: function (args) {
             return __awaiter(this, void 0, void 0, function () {
                 var path, response, error_24;
                 return __generator(this, function (_a) {
                     switch (_a.label) {
                         case 0:
-                            path = "/student/activities";
+                            path = "/department/";
                             _a.label = 1;
                         case 1:
                             _a.trys.push([1, 3, , 4]);
@@ -757,13 +776,13 @@ var getFunctions = function (axiosInstance) {
                 });
             });
         },
-        listReviewActivities: function (args) {
+        listDepartaments: function (args) {
             return __awaiter(this, void 0, void 0, function () {
                 var path, response, error_25;
                 return __generator(this, function (_a) {
                     switch (_a.label) {
                         case 0:
-                            path = "/student/activities";
+                            path = "/department/";
                             _a.label = 1;
                         case 1:
                             _a.trys.push([1, 3, , 4]);
@@ -784,9 +803,228 @@ var getFunctions = function (axiosInstance) {
                 });
             });
         },
+        updateDepartment: function (args) {
+            return __awaiter(this, void 0, void 0, function () {
+                var path, params, paramKey, value, response, error_26;
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0:
+                            path = "/department/:id";
+                            params = args.params;
+                            for (paramKey in params) {
+                                if (params.hasOwnProperty(paramKey)) {
+                                    value = params[paramKey];
+                                    path = path.replace(":".concat(paramKey), value.toString());
+                                }
+                            }
+                            _a.label = 1;
+                        case 1:
+                            _a.trys.push([1, 3, , 4]);
+                            return [4 /*yield*/, axiosInstance({
+                                    method: 'put',
+                                    data: args.body,
+                                    params: null,
+                                    url: path,
+                                })];
+                        case 2:
+                            response = _a.sent();
+                            return [2 /*return*/, response];
+                        case 3:
+                            error_26 = _a.sent();
+                            throw error_26;
+                        case 4: return [2 /*return*/];
+                    }
+                });
+            });
+        },
+        deleteDepartament: function (args) {
+            return __awaiter(this, void 0, void 0, function () {
+                var path, params, paramKey, value, response, error_27;
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0:
+                            path = "/department/:id";
+                            params = args.params;
+                            for (paramKey in params) {
+                                if (params.hasOwnProperty(paramKey)) {
+                                    value = params[paramKey];
+                                    path = path.replace(":".concat(paramKey), value.toString());
+                                }
+                            }
+                            _a.label = 1;
+                        case 1:
+                            _a.trys.push([1, 3, , 4]);
+                            return [4 /*yield*/, axiosInstance({
+                                    method: 'delete',
+                                    data: null,
+                                    params: null,
+                                    url: path,
+                                })];
+                        case 2:
+                            response = _a.sent();
+                            return [2 /*return*/, response];
+                        case 3:
+                            error_27 = _a.sent();
+                            throw error_27;
+                        case 4: return [2 /*return*/];
+                    }
+                });
+            });
+        },
+    };
+    var student = {
+        deleteActivityStudent: function (args) {
+            return __awaiter(this, void 0, void 0, function () {
+                var path, params, paramKey, value, response, error_28;
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0:
+                            path = "/student/activities/:id";
+                            params = args.params;
+                            for (paramKey in params) {
+                                if (params.hasOwnProperty(paramKey)) {
+                                    value = params[paramKey];
+                                    path = path.replace(":".concat(paramKey), value.toString());
+                                }
+                            }
+                            _a.label = 1;
+                        case 1:
+                            _a.trys.push([1, 3, , 4]);
+                            return [4 /*yield*/, axiosInstance({
+                                    method: 'delete',
+                                    data: null,
+                                    params: null,
+                                    url: path,
+                                })];
+                        case 2:
+                            response = _a.sent();
+                            return [2 /*return*/, response];
+                        case 3:
+                            error_28 = _a.sent();
+                            throw error_28;
+                        case 4: return [2 /*return*/];
+                    }
+                });
+            });
+        },
+        updateReview: function (args) {
+            return __awaiter(this, void 0, void 0, function () {
+                var path, params, paramKey, value, response, error_29;
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0:
+                            path = "/student/activities/:reviewActivityId";
+                            params = args.params;
+                            for (paramKey in params) {
+                                if (params.hasOwnProperty(paramKey)) {
+                                    value = params[paramKey];
+                                    path = path.replace(":".concat(paramKey), value.toString());
+                                }
+                            }
+                            _a.label = 1;
+                        case 1:
+                            _a.trys.push([1, 3, , 4]);
+                            return [4 /*yield*/, axiosInstance({
+                                    method: 'put',
+                                    data: args.body,
+                                    params: null,
+                                    url: path,
+                                })];
+                        case 2:
+                            response = _a.sent();
+                            return [2 /*return*/, response];
+                        case 3:
+                            error_29 = _a.sent();
+                            throw error_29;
+                        case 4: return [2 /*return*/];
+                    }
+                });
+            });
+        },
+        infoActivities: function (args) {
+            return __awaiter(this, void 0, void 0, function () {
+                var path, response, error_30;
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0:
+                            path = "/student/info";
+                            _a.label = 1;
+                        case 1:
+                            _a.trys.push([1, 3, , 4]);
+                            return [4 /*yield*/, axiosInstance({
+                                    method: 'get',
+                                    data: null,
+                                    params: args.query,
+                                    url: path,
+                                })];
+                        case 2:
+                            response = _a.sent();
+                            return [2 /*return*/, response];
+                        case 3:
+                            error_30 = _a.sent();
+                            throw error_30;
+                        case 4: return [2 /*return*/];
+                    }
+                });
+            });
+        },
+        newActivity: function (args) {
+            return __awaiter(this, void 0, void 0, function () {
+                var path, response, error_31;
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0:
+                            path = "/student/activities";
+                            _a.label = 1;
+                        case 1:
+                            _a.trys.push([1, 3, , 4]);
+                            return [4 /*yield*/, axiosInstance({
+                                    method: 'post',
+                                    data: args.body,
+                                    params: null,
+                                    url: path,
+                                })];
+                        case 2:
+                            response = _a.sent();
+                            return [2 /*return*/, response];
+                        case 3:
+                            error_31 = _a.sent();
+                            throw error_31;
+                        case 4: return [2 /*return*/];
+                    }
+                });
+            });
+        },
+        listReviewActivities: function (args) {
+            return __awaiter(this, void 0, void 0, function () {
+                var path, response, error_32;
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0:
+                            path = "/student/activities";
+                            _a.label = 1;
+                        case 1:
+                            _a.trys.push([1, 3, , 4]);
+                            return [4 /*yield*/, axiosInstance({
+                                    method: 'get',
+                                    data: null,
+                                    params: args.query,
+                                    url: path,
+                                })];
+                        case 2:
+                            response = _a.sent();
+                            return [2 /*return*/, response];
+                        case 3:
+                            error_32 = _a.sent();
+                            throw error_32;
+                        case 4: return [2 /*return*/];
+                    }
+                });
+            });
+        },
         listStudent: function (args) {
             return __awaiter(this, void 0, void 0, function () {
-                var path, response, error_26;
+                var path, response, error_33;
                 return __generator(this, function (_a) {
                     switch (_a.label) {
                         case 0:
@@ -804,8 +1042,8 @@ var getFunctions = function (axiosInstance) {
                             response = _a.sent();
                             return [2 /*return*/, response];
                         case 3:
-                            error_26 = _a.sent();
-                            throw error_26;
+                            error_33 = _a.sent();
+                            throw error_33;
                         case 4: return [2 /*return*/];
                     }
                 });
@@ -813,7 +1051,7 @@ var getFunctions = function (axiosInstance) {
         },
         createStudent: function (args) {
             return __awaiter(this, void 0, void 0, function () {
-                var path, response, error_27;
+                var path, response, error_34;
                 return __generator(this, function (_a) {
                     switch (_a.label) {
                         case 0:
@@ -831,8 +1069,8 @@ var getFunctions = function (axiosInstance) {
                             response = _a.sent();
                             return [2 /*return*/, response];
                         case 3:
-                            error_27 = _a.sent();
-                            throw error_27;
+                            error_34 = _a.sent();
+                            throw error_34;
                         case 4: return [2 /*return*/];
                     }
                 });
@@ -840,7 +1078,7 @@ var getFunctions = function (axiosInstance) {
         },
         updateStudent: function (args) {
             return __awaiter(this, void 0, void 0, function () {
-                var path, params, paramKey, value, response, error_28;
+                var path, params, paramKey, value, response, error_35;
                 return __generator(this, function (_a) {
                     switch (_a.label) {
                         case 0:
@@ -865,8 +1103,8 @@ var getFunctions = function (axiosInstance) {
                             response = _a.sent();
                             return [2 /*return*/, response];
                         case 3:
-                            error_28 = _a.sent();
-                            throw error_28;
+                            error_35 = _a.sent();
+                            throw error_35;
                         case 4: return [2 /*return*/];
                     }
                 });
