@@ -32,11 +32,22 @@ export declare function createClient({ axios }: Opts): {
     };
     activities: {
         listActivities(args: import("./types").ListActivitiesArgs): Promise<import("axios").AxiosResponse<any, any>>;
+        createActivity(args: import("./types").CreateActivityArgs): Promise<import("axios").AxiosResponse<any, any>>;
+        updateActivity(args: import("./types").UpdateActivityArgs): Promise<import("axios").AxiosResponse<any, any>>;
     };
     department: {
         createDepartment(args: import("./types").CreateDepartmentArgs): Promise<import("axios").AxiosResponse<any, any>>;
         listDepartaments(args: import("./types").ListDepartamentsArgs): Promise<import("axios").AxiosResponse<any, any>>;
         updateDepartment(args: import("./types").UpdateDepartmentArgs): Promise<import("axios").AxiosResponse<any, any>>;
+    };
+    student: {
+        updateReview(args: import("./types").UpdateReviewArgs): Promise<import("axios").AxiosResponse<any, any>>;
+        infoActivities(args: import("./types").InfoActivitiesArgs): Promise<import("axios").AxiosResponse<any, any>>;
+        newActivity(args: import("./types").NewActivityArgs): Promise<import("axios").AxiosResponse<any, any>>;
+        listReviewActivities(args: import("./types").ListReviewActivitiesArgs): Promise<import("axios").AxiosResponse<any, any>>;
+        listStudent(args: import("./types").ListStudentArgs): Promise<import("axios").AxiosResponse<any, any>>;
+        createStudent(args: import("./types").CreateStudentArgs): Promise<import("axios").AxiosResponse<any, any>>;
+        updateStudent(args: import("./types").UpdateStudentArgs): Promise<import("axios").AxiosResponse<any, any>>;
     };
     axiosInstance: AxiosInstance;
 };
